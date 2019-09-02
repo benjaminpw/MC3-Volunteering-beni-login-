@@ -163,6 +163,7 @@
 				B6C781F2230C027E005099E9 /* HomeViewController.swift */,
 				31E964A42315188B00B728BB /* QRCodeViewController.swift */,
 				E9775802230D6E4F00A9A3D0 /* ViewControllerSignUp.swift */,
+				E9775800230D6D6F00A9A3D0 /* LoginPageController.swift */,
 				E9775804230D6E5B00A9A3D0 /* ForgotPassword.swift */,
 				B6C78210230D63B0005099E9 /* EventDetailController.swift */,
 				B6163A13231235E200288352 /* FriendListController.swift */,
@@ -170,7 +171,6 @@
 				31A22CB32312B4E00005EF81 /* MyActivitiesDetailsPage.swift */,
 				31DC0CE72314015400EF75B2 /* ProfileViewController.swift */,
 				31DC0CED23146C4600EF75B2 /* friendListTableViewController.swift */,
-				E9775800230D6D6F00A9A3D0 /* LoginPageController.swift */,
 				31E964A623153EB000B728BB /* CameraViewController.swift */,
 			);
 			path = Controller;

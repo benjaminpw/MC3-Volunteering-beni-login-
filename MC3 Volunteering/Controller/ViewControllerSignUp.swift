@@ -17,17 +17,20 @@ class ViewControllerSignUp: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordTF: UITextField!
     
-    @IBOutlet weak var label1: UILabel!
-    
-    @IBOutlet weak var label2: UILabel!
+    @IBOutlet var userNameTF: UITextField!
     
     
     var userDef = UserDefaults.standard
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTF.setLeftImageSup(imageName: "name")
+        emailTF.setLeftImageSup(imageName: "email")
+        passwordTF.setLeftImageSup(imageName: "password")
+        userNameTF.setLeftImageSup(imageName: "username")
+        
 
         nameTF.delegate = self
         emailTF.delegate = self
@@ -52,23 +55,20 @@ class ViewControllerSignUp: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpTapped(_ sender: Any) {
         userDef.set(emailTF.text, forKey: "email")
-        label1.text = emailTF.text
-        label2.text = passwordTF.text
     }
     
     @IBAction func closeButtonSignUpPage(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+}
 
+extension UITextField {
+    func setLeftImageSup(imageName: String) {
+        
+        let imageView = UIImageView(frame: CGRect(x: 50, y: 50, width: 20, height: 20))
+        imageView.image = UIImage(named: imageName)
+        self.leftView = imageView;
+        self.leftViewMode = .always
+}
 }

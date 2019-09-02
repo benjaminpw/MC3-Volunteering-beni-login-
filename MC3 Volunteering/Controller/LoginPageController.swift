@@ -13,8 +13,7 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var label2: UILabel!
+
     
     var userDef = UserDefaults.standard
     
@@ -23,11 +22,14 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //icon kiri untuk txtField
+        emailTF.setLeftImageLogin(imageName: "email")
+        passwordTF.setLeftImageLogin(imageName: "password")
+        
+        
         emailTF.delegate = self
         passwordTF.delegate = self
         
-        let email = userDef.string(forKey: "email")
-        label.text = email
         
         _ = userDef.string(forKey: "password")
         
@@ -59,10 +61,18 @@ class LoginPageController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInTapped(_ sender: Any) {
         userDef.set(emailTF.text, forKey: "email")
-        label.text = emailTF.text
-        label2.text = passwordTF.text
         
     }
+}
+
+extension UITextField {
+    func setLeftImageLogin(imageName: String) {
     
-    
+    let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 20, height: 20))
+        imageView.image = UIImage(named: imageName)
+        self.leftView = imageView;
+        self.leftViewMode = .always
+        
+}
+
 }
